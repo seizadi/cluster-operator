@@ -130,14 +130,14 @@ export AWS_DEFAULT_REGION=us-east-2
 Kops settings
 ```bash
 export KOPS_CLUSTER_NAME=seizadicluster.soheil.belamaric.com
-export KOPS_STATE_STORE=s3://kops.state.seizadi.infoblox.com
-export VPC_ID=vpc-0a75b33895655b46a
-export INTERNET_GATEWAY_ID=igw-047d4259cab6b99d2
+export KOPS_STATE_STORE=s3://kops.state.seizadi.example.com
+export VPC_ID=vpc-0a0axxxxxxxxxxxxx
+export INTERNET_GATEWAY_ID=igw-040axxxxxxxxxxxxx
 ```
 
 For now need to create the S3 state storage:
 ```bash
-$ aws s3 cb kops.state.seizadi.infoblox.com
+$ aws s3 cb kops.state.seizadi.example.com
 ```
 
 Create VPC
@@ -227,9 +227,9 @@ docker run \
  -e AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE \
  -e AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY \
  -e KOPS_CLUSTER_NAME=cluster1.soheil.belamaric.com \
- -e KOPS_STATE_STORE=s3://kops.state.seizadi.infoblox.com \
+ -e KOPS_STATE_STORE=s3://kops.state.seizadi.example.com \
  soheileizadi/kops:v1.0 create cluster \
- --vpc=vpc-0a75b33895655b46a \
+ --vpc=vpc-0a0axxxxxxxxxxxxx \
  --node-count=2 \
  --master-size=t2.micro \
  --node-size=t2.micro \
@@ -242,7 +242,7 @@ docker run \
  -e AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE \
  -e AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY \
  -e KOPS_CLUSTER_NAME=cluster1.soheil.belamaric.com \
- -e KOPS_STATE_STORE=s3://kops.state.seizadi.infoblox.com \
+ -e KOPS_STATE_STORE=s3://kops.state.seizadi.example.com \
  soheileizadi/kops:v1.0 validate cluster -o json
 ```
 
